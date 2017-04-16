@@ -1,0 +1,255 @@
+swagger: "2.0"
+info:
+  version: "0.0.1"
+  title: Movie app
+# during dev, should point to your local machine
+host: localhost:10010
+# basePath prefixes all resource paths 
+basePath: /
+# 
+schemes:
+  # tip: remove http to make production-grade
+  - http
+  - https
+# format of bodies a client can send (Content-Type)
+consumes:
+  - application/json
+# format of the responses to the client (Accepts)
+produces:
+  - application/json
+paths:
+  /movie:
+    x-swagger-router-controller: movie
+    get:
+      description: Returns the movies to the caller
+      # used as the method name of the controller
+      operationId: getAll
+      responses:
+        "200":
+          description: Success
+          schema:
+            $ref: "#/definitions/MovieList"
+        # responses may fall through to errors
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+    post:
+      description: Create new movie
+      # used as the method name of the controller
+      operationId: add
+      parameters:
+        - name: movie
+          in: body
+          description: Name of the movie
+          required: true
+          schema:
+            $ref: "#/definitions/MovieBody"
+      responses:
+        "200":
+          description: Add movie successful
+          schema:
+            # a pointer to a definition
+            $ref: "#/definitions/MovieBody"
+        # responses may fall through to errors
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+  /movies/{id}:      
+    x-swagger-router-controller: movie
+    get:
+      description: return a movie
+      operationId: list
+      parameters:
+        - name: id
+          required: true
+          in: path
+          type: string
+        - name: review
+          required: false
+          in: query
+          type: boolean
+          default: false
+      responses:
+        "200":
+          description: Found the movie
+          schema:
+            # a pointer to a definition
+            $ref: "#/definitions/MovieBody"
+        # responses may fall through to errors
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+    put:
+      description: update movie
+      operationId: update
+      parameters:
+        - name: id
+          required: true
+          in: path
+          type: string
+        - name: movie
+          required: true
+          in: body
+          description: movie detail
+          schema:
+            $ref: "#/definitions/MovieBody"
+      responses:
+        "200":
+          description: update a movie successful
+          schema:
+            # a pointer to a definition
+            $ref: "#/definitions/MovieBody"
+        # responses may fall through to errors
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+    delete:
+      description: delete a movie
+      operationId: earase
+      parameters:
+        - name: id
+          required: true
+          in: path
+          type: string
+      responses:
+        "200":
+          description: delete a movie
+          schema:
+            # a pointer to a definition
+            $ref: "#/definitions/MovieBody"
+        # responses may fall through to errors
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+    post:
+      description: post a review for a movie
+      operationId: createreview
+      parameters:
+        - name: id
+          required: true
+          in: path
+          type: string
+        - name: review
+          required: true
+          in: body
+          description: create a review
+          schema:
+            $ref: "#/definitions/Review"
+      responses:
+        "200":
+          description: cretae a review success
+          schema:
+            # a pointer to a definition
+            $ref: "#/definitions/MovieBody"
+        # responses may fall through to errors
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+  /reviews/{id}:
+    x-swagger-router-controller: movie
+    delete:
+      description: Delete a movie from the database.
+      operationId: deletereview
+      parameters:
+        - name: id
+          required: true
+          in: path
+          type: string
+      responses:
+        "200":
+          description: Removes a review.
+          schema:
+            $ref: "#/definitions/Review"
+        default:
+          description: error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+  /swagger:
+    x-swagger-pipe: swagger_raw
+# complex objects have schema definitions
+definitions:
+  ErrorResponse:
+    required:
+      - message
+    properties:
+      message:
+        type: string
+  MovieList:
+    properties:
+      movie:
+        type: array
+        items:
+          $ref: "#/definitions/Movie"
+  MovieBody:
+    properties:
+      uuid:
+        type: string
+      type:
+        type: string
+      created:
+        type: integer
+      modified:
+        type: integer
+      metadata:
+        properties:
+          path:
+            type: string
+          size:
+            type: integer
+      movies:
+        $ref: "#/definitions/Movie"
+  Movie:
+    required:
+      - name
+      - year
+      - actors
+    properties:
+      ID:
+        type: integer
+      name:
+        type: string
+      year:
+        type: integer
+        minimum: 1
+      actors:
+        type: array
+        items: 
+          $ref: "#/definitions/Actor"
+      reviews:
+        items:
+          $ref: "#/definitions/Review"
+  Actor:
+    required:
+      - firstName
+      - lastName
+    properties:
+      firstName:
+        type: string
+      lastName:
+        type: string
+      gender:
+        type: string
+      age:  
+        type: integer
+  Review:
+    required:
+      - reviewer
+      - quote
+      - score
+    properties:
+      reviewer:
+        type: string
+      quote:
+        type: string
+      score:
+        type: integer
+        minimum: 1
+        maximum: 10
+      movie:
+        type: string

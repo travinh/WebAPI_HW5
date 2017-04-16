@@ -1,0 +1,604 @@
+{
+	"variables": [],
+	"info": {
+		"name": "HW5",
+		"_postman_id": "24a2cbd1-94b8-171f-1c4e-c5641337abf7",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://vinh1993-test.apigee.net/homework5/movies/68de954c-22d7-11e7-9fee-0ad881f403bf",
+			"request": {
+				"url": "http://vinh1993-test.apigee.net/homework5/movies/68de954c-22d7-11e7-9fee-0ad881f403bf",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Get information of 1 movie without query review/default query = false"
+			},
+			"response": [
+				{
+					"id": "7814030e-19ce-455a-918f-96e931116f8d",
+					"name": "without query",
+					"originalRequest": {
+						"url": "http://vinh1993-test.apigee.net/homework5/movies/68de954c-22d7-11e7-9fee-0ad881f403bf",
+						"method": "GET",
+						"header": [],
+						"body": {}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"name": "Access-Control-Allow-Origin",
+							"key": "Access-Control-Allow-Origin",
+							"value": "*",
+							"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+						},
+						{
+							"name": "Connection",
+							"key": "Connection",
+							"value": "keep-alive",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "1482",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Sun, 16 Apr 2017 20:12:27 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "ETag",
+							"key": "ETag",
+							"value": "W/\"5ca-nmUF4D8LST3HEc0bopMDZOFP2AM\"",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "Apigee Router",
+							"description": "A name for the server"
+						},
+						{
+							"name": "X-Powered-By",
+							"key": "X-Powered-By",
+							"value": "Express",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [],
+					"responseTime": 232,
+					"body": "{\"movie\":{\"statusCode\":200,\"body\":{\"action\":\"get\",\"application\":\"8e19d668-1642-11e7-a2c2-122e0737977d\",\"params\":{},\"path\":\"/movies\",\"uri\":\"https://apibaas-trial.apigee.net/vinh/sandbox/movies\",\"entities\":[{\"uuid\":\"68de954c-22d7-11e7-9fee-0ad881f403bf\",\"type\":\"movie\",\"name\":\"KungFu panda\",\"created\":1492369423082,\"modified\":1492369423334,\"actors\":[{\"firstName\":\"Ty\",\"lastName\":\"Chris\",\"age\":20,\"height\":55},{\"firstName\":\"Strange\",\"lastName\":\"Kyer\",\"age\":22,\"height\":56}],\"ID\":\"004\",\"metadata\":{\"path\":\"/movies/68de954c-22d7-11e7-9fee-0ad881f403bf\",\"size\":761},\"year\":2012}],\"timestamp\":1492373547020,\"duration\":37,\"organization\":\"vinh\",\"applicationName\":\"sandbox\"},\"headers\":{\"access-control-allow-origin\":\"*\",\"content-type\":\"application/json\",\"date\":\"Sun, 16 Apr 2017 20:12:27 GMT\",\"server\":\"Apache-Coyote/1.1\",\"set-cookie\":[\"rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Sat, 15-Apr-2017 20:12:27 GMT\"],\"content-length\":\"858\",\"connection\":\"keep-alive\"},\"request\":{\"uri\":{\"protocol\":\"https:\",\"slashes\":true,\"auth\":null,\"host\":\"apibaas-trial.apigee.net\",\"port\":443,\"hostname\":\"apibaas-trial.apigee.net\",\"hash\":null,\"search\":null,\"query\":null,\"pathname\":\"/vinh/sandbox/movies/68de954c-22d7-11e7-9fee-0ad881f403bf\",\"path\":\"/vinh/sandbox/movies/68de954c-22d7-11e7-9fee-0ad881f403bf\",\"href\":\"https://apibaas-trial.apigee.net/vinh/sandbox/movies/68de954c-22d7-11e7-9fee-0ad881f403bf\"},\"method\":\"GET\",\"headers\":{\"User-Agent\":\"usergrid-nodejs/v2.0.0-rc.2\",\"accept\":\"application/json\"}}}}"
+				}
+			]
+		},
+		{
+			"name": "http://vinh1993-test.apigee.net/homework5/movies/68de954c-22d7-11e7-9fee-0ad881f403bf",
+			"request": {
+				"url": "http://vinh1993-test.apigee.net/homework5/movies/68de954c-22d7-11e7-9fee-0ad881f403bf?review=true",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Get information of 1 movie with query: review= true"
+			},
+			"response": [
+				{
+					"id": "561b8a9d-5fff-43e1-8c21-5cff13f166e2",
+					"name": "with query success!",
+					"originalRequest": {
+						"url": "http://vinh1993-test.apigee.net/homework5/movies/68de954c-22d7-11e7-9fee-0ad881f403bf?review=true",
+						"method": "GET",
+						"header": [],
+						"body": {}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"name": "Access-Control-Allow-Origin",
+							"key": "Access-Control-Allow-Origin",
+							"value": "*",
+							"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+						},
+						{
+							"name": "Connection",
+							"key": "Connection",
+							"value": "keep-alive",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "1925",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Sun, 16 Apr 2017 20:13:46 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "ETag",
+							"key": "ETag",
+							"value": "W/\"785-5UFBFY97kIPcvbliGPDCClyvKf4\"",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "Apigee Router",
+							"description": "A name for the server"
+						},
+						{
+							"name": "X-Powered-By",
+							"key": "X-Powered-By",
+							"value": "Express",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [],
+					"responseTime": 636,
+					"body": "{\"movie\":{\"statusCode\":200,\"body\":{\"action\":\"get\",\"application\":\"8e19d668-1642-11e7-a2c2-122e0737977d\",\"params\":{},\"path\":\"/movies\",\"uri\":\"https://apibaas-trial.apigee.net/vinh/sandbox/movies\",\"entities\":[{\"uuid\":\"68de954c-22d7-11e7-9fee-0ad881f403bf\",\"type\":\"movie\",\"name\":\"KungFu panda\",\"created\":1492369423082,\"modified\":1492369423334,\"actors\":[{\"firstName\":\"Ty\",\"lastName\":\"Chris\",\"age\":20,\"height\":55},{\"firstName\":\"Strange\",\"lastName\":\"Kyer\",\"age\":22,\"height\":56}],\"ID\":\"004\",\"metadata\":{\"path\":\"/movies/68de954c-22d7-11e7-9fee-0ad881f403bf\",\"size\":761},\"year\":2012}],\"timestamp\":1492373625862,\"duration\":39,\"organization\":\"vinh\",\"applicationName\":\"sandbox\"},\"headers\":{\"access-control-allow-origin\":\"*\",\"content-type\":\"application/json\",\"date\":\"Sun, 16 Apr 2017 20:13:45 GMT\",\"server\":\"Apache-Coyote/1.1\",\"set-cookie\":[\"rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Sat, 15-Apr-2017 20:13:45 GMT\"],\"content-length\":\"858\",\"connection\":\"keep-alive\"},\"request\":{\"uri\":{\"protocol\":\"https:\",\"slashes\":true,\"auth\":null,\"host\":\"apibaas-trial.apigee.net\",\"port\":443,\"hostname\":\"apibaas-trial.apigee.net\",\"hash\":null,\"search\":null,\"query\":null,\"pathname\":\"/vinh/sandbox/movies/68de954c-22d7-11e7-9fee-0ad881f403bf\",\"path\":\"/vinh/sandbox/movies/68de954c-22d7-11e7-9fee-0ad881f403bf\",\"href\":\"https://apibaas-trial.apigee.net/vinh/sandbox/movies/68de954c-22d7-11e7-9fee-0ad881f403bf\"},\"method\":\"GET\",\"headers\":{\"User-Agent\":\"usergrid-nodejs/v2.0.0-rc.2\",\"accept\":\"application/json\"}}},\"reviews\":[{\"uuid\":\"b3b0ba97-22dd-11e7-a2c2-122e0737977d\",\"type\":\"review\",\"created\":1492372125591,\"modified\":1492372125833,\"metadata\":{\"path\":\"/reviews/b3b0ba97-22dd-11e7-a2c2-122e0737977d\",\"size\":668},\"movie\":\"KungFu panda\",\"quote\":\"Caught a screening of The Panda and all I can say is wow! I took my 6 year old daughter, who has the attention span of a 6 year old, and she wants to see it again. So do I!\",\"reviewer\":\"Eric Idol\",\"score\":5}]}"
+				}
+			]
+		},
+		{
+			"name": "http://vinh1993-test.apigee.net/homework5/movies/68de954c-22d7-11e7-9fee-0ad881f403bf",
+			"request": {
+				"url": "http://vinh1993-test.apigee.net/homework5/movies/68de954c-22d7-11e7-9fee-0ad881f403",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Get information of 1 movie without using query and invalid id"
+			},
+			"response": [
+				{
+					"id": "d7907943-a3af-424e-8535-4b363e715e7f",
+					"name": "without query and Invalid request",
+					"originalRequest": {
+						"url": "http://vinh1993-test.apigee.net/homework5/movies/68de954c-22d7-11e7-9fee-0ad881f403",
+						"method": "GET",
+						"header": [],
+						"body": {}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"name": "Access-Control-Allow-Origin",
+							"key": "Access-Control-Allow-Origin",
+							"value": "*",
+							"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+						},
+						{
+							"name": "Connection",
+							"key": "Connection",
+							"value": "keep-alive",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "199",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Sun, 16 Apr 2017 20:15:34 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "ETag",
+							"key": "ETag",
+							"value": "W/\"c7-l6w1250JokLZUW6jzOo20xPsmcY\"",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "Apigee Router",
+							"description": "A name for the server"
+						},
+						{
+							"name": "X-Powered-By",
+							"key": "X-Powered-By",
+							"value": "Express",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [],
+					"responseTime": 328,
+					"body": "{\"error\":{\"name\":\"entity_not_found\",\"description\":\"Cannot find entity with name: 68de954c-22d7-11e7-9fee-0ad881f403\",\"exception\":\"org.apache.usergrid.persistence.exceptions.EntityNotFoundException\"}}"
+				}
+			]
+		},
+		{
+			"name": "http://vinh1993-test.apigee.net/homework5/movies/68de954c-22d7-11e7-9fee-0ad881f403bf",
+			"request": {
+				"url": "http://vinh1993-test.apigee.net/homework5/movies/68de954c-22d7-11e7-9fee-0ad881f403bf",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"quote\": \"My wife and I enjoyed it so much that we saw it again the night after. And maybe another time... haha!\",\n      \"reviewer\": \" abecipriano\",\n      \"score\": 4\n}"
+				},
+				"description": "Make a post review "
+			},
+			"response": [
+				{
+					"id": "ad8b6030-252f-4e68-b8f0-ebddea9d9b04",
+					"name": "Valid POST method for review",
+					"originalRequest": {
+						"url": "http://vinh1993-test.apigee.net/homework5/movies/68de954c-22d7-11e7-9fee-0ad881f403bf",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								"{",
+								"\n",
+								"\t",
+								"\"",
+								"q",
+								"u",
+								"o",
+								"t",
+								"e",
+								"\"",
+								":",
+								" ",
+								"\"",
+								"M",
+								"y",
+								" ",
+								"w",
+								"i",
+								"f",
+								"e",
+								" ",
+								"a",
+								"n",
+								"d",
+								" ",
+								"I",
+								" ",
+								"e",
+								"n",
+								"j",
+								"o",
+								"y",
+								"e",
+								"d",
+								" ",
+								"i",
+								"t",
+								" ",
+								"s",
+								"o",
+								" ",
+								"m",
+								"u",
+								"c",
+								"h",
+								" ",
+								"t",
+								"h",
+								"a",
+								"t",
+								" ",
+								"w",
+								"e",
+								" ",
+								"s",
+								"a",
+								"w",
+								" ",
+								"i",
+								"t",
+								" ",
+								"a",
+								"g",
+								"a",
+								"i",
+								"n",
+								" ",
+								"t",
+								"h",
+								"e",
+								" ",
+								"n",
+								"i",
+								"g",
+								"h",
+								"t",
+								" ",
+								"a",
+								"f",
+								"t",
+								"e",
+								"r",
+								".",
+								" ",
+								"A",
+								"n",
+								"d",
+								" ",
+								"m",
+								"a",
+								"y",
+								"b",
+								"e",
+								" ",
+								"a",
+								"n",
+								"o",
+								"t",
+								"h",
+								"e",
+								"r",
+								" ",
+								"t",
+								"i",
+								"m",
+								"e",
+								".",
+								".",
+								".",
+								" ",
+								"h",
+								"a",
+								"h",
+								"a",
+								"!",
+								"\"",
+								",",
+								"\n",
+								" ",
+								" ",
+								" ",
+								" ",
+								" ",
+								" ",
+								"\"",
+								"r",
+								"e",
+								"v",
+								"i",
+								"e",
+								"w",
+								"e",
+								"r",
+								"\"",
+								":",
+								" ",
+								"\"",
+								" ",
+								"a",
+								"b",
+								"e",
+								"c",
+								"i",
+								"p",
+								"r",
+								"i",
+								"a",
+								"n",
+								"o",
+								"\"",
+								",",
+								"\n",
+								" ",
+								" ",
+								" ",
+								" ",
+								" ",
+								" ",
+								"\"",
+								"s",
+								"c",
+								"o",
+								"r",
+								"e",
+								"\"",
+								":",
+								" ",
+								"4",
+								"\n",
+								"}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"name": "Access-Control-Allow-Origin",
+							"key": "Access-Control-Allow-Origin",
+							"value": "*",
+							"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+						},
+						{
+							"name": "Connection",
+							"key": "Connection",
+							"value": "keep-alive",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "408",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Sun, 16 Apr 2017 20:19:56 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "ETag",
+							"key": "ETag",
+							"value": "W/\"198-4QxvgT8VKyp+jy4eT1+iPwhiOwI\"",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "Apigee Router",
+							"description": "A name for the server"
+						},
+						{
+							"name": "X-Powered-By",
+							"key": "X-Powered-By",
+							"value": "Express",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [],
+					"responseTime": 848,
+					"body": "{\"message\":\"Review add successful\",\"review\":{\"uuid\":\"0edac10e-22e2-11e7-9fee-0ad881f403bf\",\"type\":\"review\",\"created\":1492373996526,\"modified\":1492373996755,\"metadata\":{\"path\":\"/reviews/0edac10e-22e2-11e7-9fee-0ad881f403bf\",\"size\":492},\"movie\":\"KungFu panda\",\"quote\":\"My wife and I enjoyed it so much that we saw it again the night after. And maybe another time... haha!\",\"reviewer\":\" abecipriano\",\"score\":4}}"
+				}
+			]
+		},
+		{
+			"name": "http://vinh1993-test.apigee.net/homework5/movies/68de954c-22d7-11e7-9fee-0ad881f403bf",
+			"request": {
+				"url": "http://vinh1993-test.apigee.net/homework5/movies/68de954c-22d7-11e7-9fee-0ad881f403bf",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"quote\": \"My wife and I enjoyed it so much that we saw it again the night after. And maybe another time... haha!\",\n      \"score\": 4\n}"
+				},
+				"description": "Make a post review without reviewer name"
+			},
+			"response": [
+				{
+					"id": "4576013d-46dd-4916-8af7-45938ad63e3b",
+					"name": "Invalid post review cause no reviewer name",
+					"originalRequest": {
+						"url": "http://vinh1993-test.apigee.net/homework5/movies/68de954c-22d7-11e7-9fee-0ad881f403bf",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"name": "Access-Control-Allow-Origin",
+							"key": "Access-Control-Allow-Origin",
+							"value": "*",
+							"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+						},
+						{
+							"name": "Connection",
+							"key": "Connection",
+							"value": "keep-alive",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "6271",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Sun, 16 Apr 2017 20:20:37 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "Apigee Router",
+							"description": "A name for the server"
+						},
+						{
+							"name": "X-Powered-By",
+							"key": "X-Powered-By",
+							"value": "Express",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [],
+					"responseTime": 104,
+					"body": "{\"message\":\"Request validation failed: Parameter (review) failed schema validation\",\"code\":\"SCHEMA_VALIDATION_FAILED\",\"failedValidation\":true,\"fileName\":\"/organization/environment/api/node_modules/swagger-tools/lib/validators.js\",\"lineNumber\":126,\"results\":{\"errors\":[{\"code\":\"OBJECT_MISSING_REQUIRED_PROPERTY\",\"message\":\"Missing required property: reviewer\",\"path\":[]}],\"warnings\":[]},\"path\":[\"paths\",\"/movies/{id}\",\"post\",\"parameters\",\"1\"],\"paramName\":\"review\",\"stack\":\"Error: Parameter (review) failed schema validation\\n    at /organization/environment/api/node_modules/swagger-tools/lib/validators.js:126\\n    at /organization/environment/api/node_modules/swagger-tools/lib/validators.js:176\\n    at /organization/environment/api/node_modules/swagger-tools/middleware/swagger-validator.js:141\\n    at /organization/environment/api/node_modules/async/lib/async.js:356\\n    at /organization/environment/api/node_modules/async/lib/async.js:233\\n    at _asyncMap (/organization/environment/api/node_modules/async/lib/async.js:355)\\n    at /organization/environment/api/node_modules/async/lib/async.js:337\\n    at /organization/environment/api/node_modules/swagger-tools/middleware/swagger-validator.js:134\\n    at /organization/environment/api/node_modules/swagger-tools/middleware/swagger-validator.js:341\\n    at /organization/environment/api/node_modules/async/lib/async.js:356\\n    at /organization/environment/api/node_modules/async/lib/async.js:233\\n    at _asyncMap (/organization/environment/api/node_modules/async/lib/async.js:355)\\n    at /organization/environment/api/node_modules/async/lib/async.js:337\\n    at swaggerValidator (/organization/environment/api/node_modules/swagger-tools/middleware/swagger-validator.js:321)\\n    at swagger_validator (/organization/environment/api/node_modules/swagger-node-runner/fittings/swagger_validator.js:14)\\n    at /organization/environment/api/node_modules/bagpipes/lib/bagpipes.js:171\\n    at domain.js:183\\n    at /organization/environment/api/node_modules/pipeworks/pipeworks.js:72\\n    at /organization/environment/api/node_modules/pipeworks/pipeworks.js:223\\n    at /organization/environment/api/node_modules/pipeworks/pipeworks.js:135\\n    at /organization/environment/api/node_modules/pipeworks/pipeworks.js:186\\n    at /organization/environment/api/node_modules/bagpipes/lib/bagpipes.js:98\\n    at domain.js:183\\n    at /organization/environment/api/node_modules/pipeworks/pipeworks.js:72\\n    at postFlight (/organization/environment/api/node_modules/bagpipes/lib/bagpipes.js:218)\\n    at /organization/environment/api/node_modules/bagpipes/lib/bagpipes.js:174\\n    at swaggerSecurity (/organization/environment/api/node_modules/swagger-tools/middleware/swagger-security.js:172)\\n    at swagger_security (/organization/environment/api/node_modules/swagger-express-mw/node_modules/swagger-node-runner/fittings/swagger_security.js:13)\\n    at /organization/environment/api/node_modules/bagpipes/lib/bagpipes.js:171\\n    at domain.js:183\\n    at /organization/environment/api/node_modules/pipeworks/pipeworks.js:72\\n    at postFlight (/organization/environment/api/node_modules/bagpipes/lib/bagpipes.js:218)\\n    at /organization/environment/api/node_modules/bagpipes/lib/bagpipes.js:174\\n    at cors (/organization/environment/api/node_modules/cors/lib/index.js:185)\\n    at /organization/environment/api/node_modules/cors/lib/index.js:221\\n    at /organization/environment/api/node_modules/cors/lib/index.js:211\\n    at /organization/environment/api/node_modules/cors/lib/index.js:216\\n    at /organization/environment/api/node_modules/cors/lib/index.js:196\\n    at corsMiddleware (/organization/environment/api/node_modules/cors/lib/index.js:201)\\n    at cors (/organization/environment/api/node_modules/swagger-node-runner/fittings/cors.js:15)\\n    at /organization/environment/api/node_modules/bagpipes/lib/bagpipes.js:171\\n    at domain.js:183\\n    at /organization/environment/api/node_modules/pipeworks/pipeworks.js:72\\n    at postFlight (/organization/environment/api/node_modules/bagpipes/lib/bagpipes.js:218)\\n    at /organization/environment/api/node_modules/bagpipes/lib/bagpipes.js:174\\n    at onError (/organization/environment/api/node_modules/bagpipes/lib/fittings/onError.js:27)\\n    at /organization/environment/api/node_modules/bagpipes/lib/bagpipes.js:171\\n    at domain.js:183\\n    at /organization/environment/api/node_modules/pipeworks/pipeworks.js:72\\n    at /organization/environment/api/node_modules/pipeworks/pipeworks.js:223\\n    at /organization/environment/api/node_modules/pipeworks/pipeworks.js:135\\n    at /organization/environment/api/node_modules/pipeworks/pipeworks.js:186\\n    at /organization/environment/api/node_modules/bagpipes/lib/bagpipes.js:59\\n    at domain.js:183\\n    at /organization/environment/api/node_modules/pipeworks/pipeworks.js:72\\n    at /organization/environment/api/node_modules/pipeworks/pipeworks.js:223\\n    at /organization/environment/api/node_modules/pipeworks/pipeworks.js:135\\n    at play (/organization/environment/api/node_modules/bagpipes/lib/bagpipes.js:61)\\n    at adaptToConnect (/organization/environment/api/node_modules/swagger-node-runner/lib/connect_middleware.js:78)\\n    at /organization/environment/api/node_modules/swagger-node-runner/lib/connect_middleware.js:25\\n    at /organization/environment/api/node_modules/swagger-tools/middleware/swagger-metadata.js:333\\n    at /organization/environment/api/node_modules/async/lib/async.js:52\\n    at /organization/environment/api/node_modules/async/lib/async.js:361\\n    at /organization/environment/api/node_modules/async/lib/async.js:52\\n    at done (/organization/environment/api/node_modules/async/lib/async.js:246)\\n    at /organization/environment/api/node_modules/async/lib/async.js:44\\n    at /organization/environment/api/node_modules/async/lib/async.js:358\\n    at /organization/environment/api/node_modules/body-parser/lib/read.js:111\\n    at done (/organization/environment/api/node_modules/raw-body/index.js:248)\\n    at onEnd (/organization/environment/api/node_modules/raw-body/index.js:294)\\n    at g (events.js:180)\\n    at emit (events.js:92)\\n    at _stream_readable.js:943\\n    at _tickDomainCallback (trireme.js:491)\\n    at _tickFromSpinner (trireme.js:422)\\n\"}"
+				}
+			]
+		}
+	]
+}
